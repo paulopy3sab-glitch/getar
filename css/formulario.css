@@ -1,0 +1,85 @@
+/* 
+    Document   : formulario
+    Created on : 23/10/2015, 11:33:24
+    Author     : Paulo
+    Description:
+        Diagramar formularios do sistema
+*/
+
+
+label{
+    width:220px;
+    float: left;
+    margin-right: 12px;
+    
+    font-size: 10pt;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #222222;
+    text-align:right;
+}
+
+fieldset{
+    
+    
+}
+
+fieldset b{
+    font-family: verdana;
+    font-size: 14px;
+    color: #222222;
+}
+
+fieldset i{
+    font-family: verdana;
+    font-size: 10px;
+    color: blue;
+}
+
+legend{
+    font-size: 12px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #F59C16;
+}
+
+
+/*
+* Bloqueando o formulario enquanto carrega fotos
+*/
+.enviandoFt{
+    background-color: gray;
+}
+.enviandoFt input {
+    color: white;
+}
+.enviandoFt textarea {
+    color: white;
+}
+.enviandoFt select{
+    color: white;
+}
+
+#foto{
+    width: 360px;
+    height: 280px;
+
+}
+
+#datasheet{
+    width: 360px;
+    height: 280px;
+}
+
+#formLog{
+    
+}
+
+#formLog form fieldset label{
+    width: 140px;
+    float: left;
+    margin-right: 12px;
+    
+    font-size: 10pt;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #666666;
+    text-align:right;
+}

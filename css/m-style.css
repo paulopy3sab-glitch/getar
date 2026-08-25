@@ -1,0 +1,417 @@
+/* 
+    Document   : style
+    Created on : /2008
+    Author     : Paulo Regis <paulo_schw@yahoo.com.br>
+    Description:
+        Configuracoes basicas para Mobile
+*/
+html, body{
+    height: 100%;
+}
+
+body {
+    margin: 0 0 0 0;
+    background-image: url(../imagens/area_testes.png);
+    background-repeat: no-repeat;
+}
+
+a:link {
+    font-size: 10pt;
+    color: #006600;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+a:visited {
+    font-size: 10pt;
+    color: #000088;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+a:hover {
+    font-size: 10pt;
+    color: #F59C16;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-size: 10pt;
+    color: #000000;
+    text-indent: 30px;
+    text-align: justify;	
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* classes especificas */
+#logo {
+    /*border:1px solid #ccc;*/
+    display:table;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.menu {
+    float:left;
+    width:30%;
+}
+
+.rodape {
+    position:absolute;
+    bottom:0px;
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.titulo {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    text-decoration: underline;
+    color: #FF9900;
+    text-align: center;
+    font-weight: bold;
+}
+
+.chamada {
+    font-size: 10pt;
+    color: #000000;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.txt {
+    font-size: 10pt;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #666666;
+    text-align: justify;
+}
+
+.autor {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    text-align: right;
+    font-style: italic;
+    color: #F59C16;
+}
+
+.sub-titulo {
+    font-size: 10pt;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background-color: #70b7db;
+}
+
+.pmobil{
+    display: none;
+}
+
+/* seletores especificos */
+#principal{
+    width: auto;
+    min-height: 100%;
+    position: relative;
+}
+
+#cabecalho{
+    width: 100%;
+    height: 82px;
+    background-color: #FF9900;
+    color: bisque;
+    
+    font-family: serif;
+    font-size: small;
+}
+
+#cabecalho a{
+    color:white;
+}
+
+#cabecalho a:visited{
+    color: white;
+}
+
+#cabecalho #cablinks{
+    margin-left: 22px;
+}
+
+#cabecalho #cablinks a:hover{
+    background: #70b7db;
+    color: white;
+    border-radius: 8px;
+}
+
+#logon{
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    font-family: initial;
+    font-size: 12px;
+    text-align: left;
+    
+}
+
+#menu{
+    width: 94%;
+    background-color: silver;
+    color: #FFF;
+    
+    padding-top: 18px;
+    
+    font-family: cursive;
+    font-size: 14px;
+    /*letter-spacing: 6px;*/
+}
+
+#mens{    
+    width: 94%;
+}
+
+#conteudo{
+    width: 94%;
+    height: auto;
+    /*padding: 14px 26px 14px 32px;*/
+    
+    font-family: sans-serif;
+    font-size: 14px;
+    /*text-indent: 22px;*/
+}
+
+#conteudo p{
+    text-align: justify;
+    
+}
+
+#imagem{
+    width: 240px;
+    height: auto;
+    float: left;
+}
+
+#intro{
+    width: 240px;
+    height: auto;
+    float: right;
+    
+    font-size: 10pt;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #666666;
+    text-align: justify;    
+}
+
+#texto{    
+    width: 100%;
+    height: auto;
+    
+    font-size: 10pt;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #666666;
+    text-align: justify; 
+}
+
+#fonte{   
+    width: 100%;
+    height: 46px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    text-align: right;
+    font-style: italic;
+    color: #F59C16;
+}
+
+#rodape{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+        
+    background-color: #FF9900;
+    color: white;
+}
+
+/* opcoes em cada cadastro */
+#opcoes{    
+    width: 100%;
+    height: 476px;
+    position: inherit;
+    bottom: 0;
+        
+    background-color: white;
+    color: black;
+}
+
+#opcoes #elemento {
+    width: 120px;
+    height: 62px;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    float: left;
+    
+    margin-bottom: auto;
+    margin-left: 12px;
+    
+    font-size: 10pt;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #666666;
+    text-align: center;
+}
+
+#opcoes #elemento img {
+    height: 24px;
+}
+
+#opcoes #elementoAdmin {/* Fundo diferente para administradores*/
+    width: 120px;
+    height: 62px;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    float: left;
+    background-color: #CCCCCC;
+    
+    margin-bottom: auto;
+    margin-left: 12px;
+    
+    font-size: 10pt;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #666666;
+    text-align: center;
+}
+
+#opcoes #elementoAdmin img {
+    height: 24px;
+}
+
+#designer{
+    width: 100%;
+    height: 20px;
+    
+    font-family: serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+#contato{
+    width: 100%;
+    height: 20px;
+    
+    font-family: serif;
+    font-size: small;
+    text-align: left;
+    text-decoration: none;
+}
+
+#contato a{
+    text-decoration: none;
+}
+
+#contato a:hover{
+    background: #70b7db;
+    color: white;
+    border-radius: 8px;
+}
+
+#contato a:visited{
+    color: white;
+}
+
+#contato a:link{
+    color: white;
+}
+
+/*
+** FORMATACAO DO MENU
+*/
+#menu ul{    
+    /*padding-left: 15%;*/
+    margin: auto;
+    list-style-type: none;
+    
+}
+
+#menu ul li{
+    position: relative;
+    /*float: left;
+    margin-left: 12px;*//* para separar os itens na vertical */
+}
+
+#menu ul li a{
+    text-decoration: none;
+    font-size: larger;
+    color: white;
+    display: block;
+    width: auto;
+    line-height: 24px;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+
+#menu ul li a:hover{
+    /*width: 182px;
+    background-color: grey;
+    color: white; 
+    border-radius: 8px;*/
+}
+
+#menu ul li ul{
+    display: block;
+    top: 24px;
+    left: 14px;
+    line-height: 40px;
+}
+
+#menu ul li:hover ul{
+    /*display: block;
+    float: left;
+    width: 140px;
+    height: 24px;
+    line-height: 40px;*/
+}
+
+#menu ul li ul li{
+    width: 140px;
+    /*height: 40px;*/
+    line-height: 24px;
+    /* margin: 0px; */
+    background: #666666;
+    color: white;
+    border-radius: 8px;
+    margin-left: -38px;
+}
+
+/* Retorno de Atualizacoes */
+#msgObs{
+    width: 320px;
+    height: 48px;
+    
+    font-family: verdana;
+    font-size: 14px;
+    color: red;
+    font-weight: bold;
+}
+
+#divTarfOS{
+    width: 100%;
+    height: auto;
+    
+    font-family: verdana;
+    
+    text-align: left;
+}
+
+#divMenuErp{
+    width: 420px;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+#divMenuErp a img{
+    height: 82px;
+}
+
+#divMenuErpItem{
+    margin-right: 6px;
+    float: left;
+    text-align: center;
+}

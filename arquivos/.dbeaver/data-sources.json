@@ -1,0 +1,57 @@
+{
+	"folders": {},
+	"connections": {
+		"mariaDB-19f2f5c651c-5e827ddb56fb7c5f": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "getarsab",
+			"configuration": {
+				"host": "pergamo",
+				"port": "3306",
+				"database": "getarsab",
+				"url": "jdbc:mariadb://pergamo:3306/getarsab",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-show-all-dbs@": "true"
+				},
+				"auth-model": "native"
+			}
+		},
+		"mysql8-19f424368b7-48646d6dd5e2a69b": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "MySQL",
+			"configuration": {
+				"host": "localhost",
+				"port": "3307",
+				"database": "getarsab",
+				"url": "jdbc:mysql://localhost:3307/getarsab",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-show-all-dbs@": "true"
+				},
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Desenvolvimento",
+			"color": "255,255,255",
+			"description": "Banco de dados de desenvolvimento",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": true,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400
+		}
+	}
+}

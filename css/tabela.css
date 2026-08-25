@@ -1,0 +1,94 @@
+/* 
+    Document   : tabela
+    Created on : 23/10/2015, 10:00:25
+    Author     : Paulo Regis
+    Description:
+        Formatar especificamente os dados tabulares
+*/
+caption{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    text-decoration: underline;
+    color: #FF9900;
+    text-align: center;
+    font-weight: bold;
+}
+
+thead th {
+    font-size: 12px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background-color: #70b7db!important;
+}
+
+tbody th a img{
+    height: 16px;
+}
+
+tbody th {
+    font-size: 10px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background-color: #70b7db;
+}
+
+tbody tr:hover{
+   background-color: #FFDDDD;
+}
+
+tbody td{
+    font-size: 10px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #666666;
+    text-align: justify;
+}
+
+/* Evita a linhas com fundo ao passar o mouse*/
+#calendario tr:hover{
+   background-color: inherit!important;
+}
+
+#calendario td{
+    color: black;
+    background-color: white;
+}
+
+#calendario td a:link{
+    color: brown;
+}
+
+#calendario td a:visited{
+    color: brown;
+}
+
+.domingo{
+    color: white!important;
+    background-color: red!important;
+}
+
+.domingo td a:link{
+    color: white!important;
+}
+
+.domingo a:visited{
+    color: white!important;
+}
+
+.sabado{
+    color: white!important;
+    background-color: #666666!important;
+}
+
+/* alternancia da cor da linhas na listagem */
+.corLinhaPar{
+    background-color: #fff;
+}
+
+.corLinhaImpar{
+    background-color: #ccc;
+}
+
+.corLinhaAtiva{
+    background-color: #FFDDDD;
+
+}

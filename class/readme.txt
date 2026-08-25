@@ -1,0 +1,1 @@
+Arquivo de classe: cadastro.php, carne.php e conta.php movidos para a pasta administrava de html livre.

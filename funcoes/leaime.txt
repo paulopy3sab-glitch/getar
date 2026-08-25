@@ -1,0 +1,3 @@
+Para manter limpo a ajuda contextual movidos para traba/homepage/getar:
+funcoes/classe_conex-ora.php
+funcoes/funcoes-conex_obsol.php

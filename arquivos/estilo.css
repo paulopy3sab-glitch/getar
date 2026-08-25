@@ -1,0 +1,29 @@
+#menu{
+    width: 640px;
+    height: 52px;
+    font-size: 32px;
+    line-height: 50px;
+    background-color: wheat;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#menu ul{
+    list-style: none;
+}
+
+#menu ul li{
+    float: left;
+    margin-left: 12px;
+    
+}
+#menu ul li ul{
+    display: none;
+}
+
+#menu ul li ul li{
+    clear: left; /* para que os submenus fiquem listadas na vertical */
+}
+#menu ul li:hover ul{
+    display: block;
+}
