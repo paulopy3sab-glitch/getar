@@ -821,6 +821,19 @@ trait Tgeral {
         return $str;
     }
 
+    public function selectEstadosNv($codest, $pais = 1) {
+        $consulta = "SELECT cod, nome FROM getar_estado WHERE getar_pais_id_pais= " . $pais;
+        $retorno = $this->retornoSQL($consulta);
+        $str = "<select name=\"codest\">
+                    <option value=\"\">Selecione</option>";
+        while ($dados = $this->arraySQL($retorno)) {
+            $str .= "<option value=\"" . $dados["cod"] . "\" " . $this->selectedIf($dados["cod"], $codest) . ">" . $dados["nome"] . "</option>";
+        }
+        $str .= "</select>";
+
+        return $str;
+    }
+
     /**
      * select de pais cadastrados
      * @param type $pais
@@ -833,6 +846,19 @@ trait Tgeral {
                     <option value=\"\">Selecione</option>";
         while ($dados = $this->arraySQL($retorno)) {
             $str .= "<option value=\"" . $dados["pais"] . "\" " . $this->selectedIf($dados["pais"], $pais) . ">" . $dados["pais"] . "</option>";
+        }
+        $str .= "</select>";
+
+        return $str;
+    }
+
+    public function selectPaisNv($pais = 1) {
+        $consulta = "SELECT cod, nome FROM getar_pais ORDER BY nome ";
+        $retorno = $this->retornoSQL($consulta);
+        $str = "<select name=\"codpais\" onchange=\"atualDivEstado(this.value);\">
+                    <option value=\"\">Selecione</option>";
+        while ($dados = $this->arraySQL($retorno)) {
+            $str .= "<option value=\"" . $dados["cod"] . "\" " . $this->selectedIf($dados["cod"], $pais) . ">" . $dados["nome"] . "</option>";
         }
         $str .= "</select>";
 
@@ -1005,7 +1031,7 @@ trait Tgeral {
                     <label>Bairro: </label><input name=\"bai\" type=\"text\" placeholder=\"Bairro Centro\" size=\"42\" maxlength=\"60\"/><br/>
                     <label>CEP: </label><input name=\"cep\" type=\"text\" placeholder=\"00000-000\" size=\"10\" maxlength=\"9\"/><br/>
                     <label>Cidade: </label><input name=\"cidade\" type=\"text\" placeholder=\"Cidade\" size=\"22\" maxlength=\"40\"/><br/>
-                    <label>Estado: </label>" . $this->selectEstados("") . "<br/>
+                    <label>Estado: </label>" . $this->selectEstadosNv(1) . "<br/>
                     <label>Telefone: </label><input name=\"fone\" type=\"text\" placeholder=\"(99)9 9999-9999\" size=\"17\" maxlength=\"15\"/>
                 </div>";
 
@@ -1074,6 +1100,29 @@ trait Tgeral {
         $str = str_replace("<tab>", "\t", $str);
         $str = str_replace("&apos;", "'", $str);
         $str = str_replace("&bsol;", trim("\ ", " "), $str); // a \ de c:\windows
+
+        return $str;
+    }
+
+    /**
+     * Rodape personalizado
+     * @return string
+     */
+    public function rodape() {
+        $str = " <div id=\"rodape\">
+                   <div id=\"designer\"> Programador Idealizador: Paulo Regis - Maio/2008. Vers&atilde;o 4.0.0: Janeiro/2025<br />
+                   &Uacute;ltimo Backup: 17/01/2026</div>
+                   <div id=\"contato\">" . $this->contato() . "</div>
+               </div>";
+
+        return $str;
+    }
+
+    /**
+     * Link dos contatos do site e ajuda do sistema
+     */
+    public function contato() {
+        $str = "<a href=\"mailto:paulo_schw@yahoo.com.br\">paulo_schw@yahoo.com.br</a>";
 
         return $str;
     }
