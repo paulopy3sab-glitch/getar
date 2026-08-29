@@ -29,3 +29,15 @@ function validaForm() {
      */
     return true;
 }
+
+/**
+ * Atualiza o select dos estados conforme o select do pais
+ * @param {type} cod
+ * @returns {undefined}
+ */
+function atualDivEstado(cod) {
+    var head = document.getElementsByTagName('head').item(0);
+    var eScript = document.createElement('script');
+    eScript.setAttribute('src', 'pagina/cadastros/js_estado.php?cod=' + cod);
+    head.appendChild(eScript);
+}
