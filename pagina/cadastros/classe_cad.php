@@ -30,6 +30,7 @@ class Cadastro extends Conex {
     private $cidade;
     private $pais;
     private $estado;
+    private $codEst;
     private $situCad;
     //
     private $urlRedrt;
@@ -246,9 +247,17 @@ class Cadastro extends Conex {
     public function get_estado() {
         return $this->estado;
     }
+    
+    public function get_codEst() {
+        return $this->codEst;
+    }
 
     public function set_estado($estado) {
         $this->estado = $estado;
+    }
+    
+    public function set_codEst($codEst) {
+        $this->codEst = $codEst;
     }
 
     public function get_situCad() {
@@ -464,11 +473,13 @@ class Cadastro extends Conex {
      * @return string
      */
     public function logon_sis() {
-        $consulta = "SELECT hashsl,
-                            nick,
-                            codcad
-                       FROM getar_control
-                      WHERE nick  ='" . $this->get_nick() . "'";
+        $consulta = "SELECT ctrlc.hashsl,
+                            ctrlc.nick,
+                            ctrlc.codcad
+                       FROM getarsab.getar_control ctr,
+                            getar_control ctrlc # tabela do proprietario
+                      WHERE ctr.nick = ctrlc.nick
+                            AND ctr.nick  ='" . $this->get_nick() . "'";
         #$dados = $this->consultaSQL(cad_cons02($this->get_nick(), $this->get_senha()));
         $dados = $this->consultaSQL($consulta);
         if (password_verify($this->get_senha(), $dados['hashsl'])) {
@@ -615,7 +626,7 @@ class Cadastro extends Conex {
                             (SELECT numero FROM getar_fones WHERE codcli = cad.cod LIMIT 1) AS fones,
                             (SELECT endr FROM getar_emails WHERE codcli = cad.cod LIMIT 1) AS email,
                             cidade,
-                            estado,
+                            (SELECT nome FROM getar_estado WHERE cod = getar_estado_cod)estado,
                             (SELECT nick
                              FROM getar_control ct
                              WHERE ct.codcad = cad.cod
@@ -712,8 +723,8 @@ class Cadastro extends Conex {
         }
         //  Cadastro provissorio
         if ($this->get_codCad() == "") {
-            $consulta = "INSERT INTO getar_cad (nome, desde, clasf, cidade, estado, situacao)
-                                VALUES('', CURDATE(), 'c', '" . $this->get_cidPadr() . "', '" . $this->get_estPadr() . "', 'temporario')";
+            $consulta = "INSERT INTO getar_cad (nome, desde, clasf, cidade, situacao)
+                                VALUES('', CURDATE(), 'c', '" . $this->get_cidPadr() . "', 'temporario')";
             $this->executaIdSQL($consulta);
             $codCad = $this->get_idRet();
             $this->set_codCad($codCad);
@@ -732,25 +743,25 @@ class Cadastro extends Conex {
                             cad.complemento,
                             cad.bairro,
                             cad.cidade,
-                            (SELECT codpais FROM estado est WHERE est.pais = cad.pais LIMIT 1) codpais,
+                            pais.cod codpais,
                             cad.cep,
-                            cad.estado,
-                            cad.pais,
-                            '',
-                            estd.nome nmestado,
-                            '',
+                            pais.cod codpais,
+                            pais.nome nmpais,
+                            est.cod codestado,
+                            est.nome nmestado,
                             date_format(cad.nasc, '%d') dia_nasc,
                             date_format(cad.nasc, '%m') mes_nasc,
                             date_format(cad.nasc, '%Y') ano_nasc,
                             date_format(cad.desde, '%d') dia_desde,
                             date_format(cad.desde, '%m') mes_desde,
                             date_format(cad.desde, '%Y') ano_desde,
-                            cad.ref,
                             (SELECT COUNT(*) FROM getar_part WHERE nick = '" . $_SESSION['resp'] . "' AND codcad= cad.cod) nm,
                             cad.situacao
                        FROM getar_cad cad,
-                            getar_estado estd
-                      WHERE cad.getar_estado_cod= estd.cod
+                            getar_estado est,
+                            getar_pais pais
+                      WHERE cad.getar_estado_cod= est.cod
+                            AND est.getar_pais_id_pais = pais.cod
                             AND cad.cod=" . $this->get_codCad();
 
         $dados = $this->consultaSQL($consulta);
@@ -1367,10 +1378,8 @@ class Cadastro extends Conex {
                                      complemento='" . $this->get_complemento() . "',
                                      bairro='" . $this->get_bairro() . "',
                                      cidade='" . $this->get_cidade() . "',
-                                     pais='" . $this->get_pais() . "',
-                                     estado='" . $this->get_estado() . "',
+                                     getar_estado_cod= " . $this->get_codEst() . ",
                                      cep='" . $this->get_cep() . "',
-                                     ref='" . $this->get_ref() . "',
                                      clasf= '" . $this->get_clasf() . "',
                                      situacao= '" . $this->get_situCad() . "'
                                WHERE cod=" . $this->get_codCad();
@@ -1835,7 +1844,7 @@ class Cadastro extends Conex {
             if ($nick == "") {
                 $nick = "temp" . $this->get_codCad();
                 $this->set_nick($nick);
-                $consulta = "INSERT INTO getar_control (nick, codcad, hashsl, contra) VALUES('', " . $this->get_codCad() . ", 'xxxx', 'xxxx')";
+                $consulta = "INSERT INTO getar_control (nick, codcad, hashsl, contrahash, custohora) VALUES('', " . $this->get_codCad() . ", ' ', ' ', 0)";
                 $this->executaSQL($consulta);
 
                 $novoLog = TRUE;
