@@ -1425,7 +1425,7 @@ class Estoque extends Conex {
                     <a href=\"index.php?st=pedido&pag=ped_ldetal&codped=" . $dados['codped'] . "\">
                         <img src=\"imagens/editar.gif\" alt=\"\" border=\"0\">
                     </a>
-                    <a href=\"index.php?st=estoque&pag=edit&codestq=" . $this->get_codEst() . "&codped=" . $dados['codped'] . "&acao=excitem\">
+                    <a href=\"index.php?st=estoque&pag=excitem&codestq=" . $this->get_codEst() . "&codped=" . $dados['codped'] . "\">
                         <img src=\"imagens/lixo.gif\" alt=\"\" border=\"0\">
                     </a><br />";
         }
