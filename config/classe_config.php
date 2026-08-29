@@ -55,7 +55,7 @@ class Config {
         $this->host = "localhost";
         $this->banco = "getarteste";
         #$this->usuario = "root";
-        #$this->senhaBd = "sardo312";
+        #$this->senhaBd = "per&ga:mo";
         $this->usuario = "dbgetar";
         $this->senhaBd = "m@te1128";
         //
