@@ -171,6 +171,7 @@ trait Testcons {
                     est.nossonum,
                     est.descr,
                     est.descrtec,
+                    COALESCE(NULLIF(img.imagem, ''), 'sem_imagem.jpg') AS imagem,
                     CASE
                        WHEN est.und IN('pc', 'und') THEN ROUND(qtd, 0)
                        WHEN est.und IN('m', 'ml', 'Kg') THEN ROUND(qtd, 3)
@@ -187,6 +188,13 @@ trait Testcons {
                     END clasf,
                     est.situacao
                FROM estoque est
+                    LEFT JOIN estoqueimg AS img
+                         ON img.codestq = est.cod
+                         AND img.cod = (
+                             SELECT MIN(ei.cod)
+                             FROM estoqueimg AS ei
+                             WHERE ei.codestq = est.cod
+                         )
               WHERE est.situacao != 'temporario'
                     AND est.numest = " . $numest . "
                " . $complemento . "
