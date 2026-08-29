@@ -87,20 +87,11 @@
             <label>Bairro: </label><input name="bairro" type="text" value="<?php echo $dados['bairro']; ?>"><br>
             <label>CEP.: <?php echo $cad->get_msgCEP(); ?></label><input name="cep" type="text" size="10" maxlength="9" value="<?php echo $dados['cep']; ?>"><br>
             <label>Cidade: </label><input name="cidade" type="text" size="22" maxlength="40" value="<?php echo $dados['cidade']; ?>"><br>
-            <label>Estado: </label><?php echo $cad->selectEstados($dados['estado'], $dados['codpais']); ?><br>
-            <label>Pa&iacute;s: </label><?php echo $cad->selectPais($dados['pais']); ?><br>
-            <label>---</label>&nbsp;<br />
-            <label>Estado: </label><?php echo $dados['nmestado']; ?><br>
-            <label>Pa&iacute;s: </label><?php echo $dados['codpais']; ?><br>
-            <label>---</label>&nbsp;<br />
-            <?php
-            if (!$cad->validaEstado($dados['estado'])) {
-                ?>
-                <label>Estado: </label><?php echo $dados['estado']; ?><br>
-                <label>Codigo Pais: </label><?php echo $dados['codpais']; ?><br>
-                <?php
-            }
-            ?>
+            <label>Estado: </label>
+                <div id="divEstado">
+                    <?php echo $cad->selectEstadosNv($dados['codestado'], $dados['codpais']); ?><br>
+                </div>
+            <label>Pa&iacute;s: </label><?php echo $cad->selectPaisNv($dados['codpais']); ?><br>
         </fieldset>
         <fieldset>
             <legend>O Registro</legend>
