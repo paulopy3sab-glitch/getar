@@ -124,8 +124,7 @@ if (isset($_POST['inserirItem'])) {
 
 $complemento = "";
 $msgRetira = "";
-$codestq = $_GET['codestq'];
-$est->set_codEst($codestq);
+
 switch ($pag) {
     case 'slvfabr':
         $codfabr = $_GET['codfabr'];
@@ -134,7 +133,7 @@ switch ($pag) {
                     WHERE cod=" . $codestq;
         $msg = executaSQL($consulta);
         include './pagina/estoque/includes/estoque-cad.inc.php';
-        $complemento .= "AND cod= '" . $codestq . "'";
+        $complemento .= "AND est.cod= '" . $codestq . "'";
         break;
     case 'slvforn':
         $codforn = $_GET['codforn'];
@@ -146,41 +145,41 @@ switch ($pag) {
         $msgForn = executaSQL($consulta);
         }
         include './pagina/estoque/includes/estoque-cad.inc.php';
-        $complemento .= "AND cod= '" . $codestq . "'";
+        $complemento .= "AND est.cod= '" . $codestq . "'";
         break;
     case 'excforn':
         $codforn = $_GET['codforn'];
         $consulta = "DELETE FROM fornecedor WHERE codestq= " . $codestq . " AND codforn = " . $codforn . " LIMIT 1";
         $resultado = executaSQL($consulta);
         include './pagina/estoque/includes/estoque-cad.inc.php';
-        $complemento .= "AND cod= '" . $codestq . "'";
+        $complemento .= "AND est.cod= '" . $codestq . "'";
         break;
     case 'excitem':
         $est->set_codPed($_GET['codped']);
         $msgItem = $est->pedidoExclItem();
         include './pagina/estoque/includes/estoque-cad.inc.php';
-        $complemento .= "AND cod= '" . $codestq . "'";
+        $complemento .= "AND est.cod= '" . $codestq . "'";
         break;
     case 'relatoest';
         include './pagina/estoque/includes/estoque_relato.inc.php';
-        $complemento .= " AND cod = (SELECT cod FROM estoque ORDER BY cod DESC LIMIT 1)";
+        $complemento .= " AND est.cod = (SELECT cod FROM estoque ORDER BY cod DESC LIMIT 1)";
         break;
     case 'balanco';
         include './pagina/estoque/balanco.inc.php';
-        $complemento .= " AND cod = (SELECT cod FROM estoque ORDER BY cod DESC LIMIT 1)";
+        $complemento .= " AND est.cod = (SELECT cod FROM estoque ORDER BY cod DESC LIMIT 1)";
         break;
     case 'edit':
         $est->set_codEst($codestq);
         include './pagina/estoque/includes/estoque-cad.inc.php';
-        $complemento .= "AND cod= '" . $codestq . "'";
+        $complemento .= "AND est.cod= '" . $codestq . "'";
         break;
     case 'detal':
         include ("estoque-detal.inc.php");
-        $complemento .= "AND cod= '" . $codestq . "'";
+        $complemento .= "AND est.cod= '" . $codestq . "'";
         break;
     case 'cad':
         include './pagina/estoque/includes/estoque-cad.inc.php';
-        $complemento .= "AND cod= '" . $codestq . "'";
+        $complemento .= "AND est.cod= '" . $codestq . "'";
         break;
     case 'list':
         $complemento .= " ORDER BY cod DESC";
@@ -190,7 +189,7 @@ switch ($pag) {
         #$comExtra = "&pag=list_u";
         break;
     case 'list_i':
-        $complemento = " AND situacao = 'inativo'
+        $complemento = " AND est.situacao = 'inativo'
                          ORDER BY cod DESC"; // repare que este eh o unico que mata o complemento padrao
         #$comExtra = "&pag=list_i";
         break;
@@ -201,23 +200,23 @@ switch ($pag) {
         break;
     case 'list_subcatg':
         $complemento .= " AND est.catg = " . $codCatg . "
-                         AND est.subcatg = " . $codSubCatg . "
-                         ORDER BY est.descr";
+                          AND est.subcatg = " . $codSubCatg . "
+                          ORDER BY est.descr";
         #$comExtra = "&pag=list_subcatg&codcatg=" . $codCatg . "&codsubcatg=" . $codSubCatg;
         break;
     case 'excl':
         excluir();
-        $complemento .= " AND cod = (SELECT cod FROM estoque ORDER BY cod DESC LIMIT 1)";
+        $complemento .= " AND est.cod = (SELECT cod FROM estoque ORDER BY cod DESC LIMIT 1)";
         break;
     case 'pesq':
         $pesqStr = $_POST['string'];
-        $complemento .= " AND descr LIKE '" . $pesqStr . "%'
-                          OR descrtec LIKE '" . $pesqStr . "%'
+        $complemento .= " AND est.descr LIKE '" . $pesqStr . "%'
+                          OR est.descrtec LIKE '" . $pesqStr . "%'
                         ORDER BY descr";
         #$blcPag = TRUE; // Bloquear paginacao
         break;
     default :
-        $complemento .= " ORDER BY cod DESC";
+        $complemento .= " ORDER BY est.cod DESC";
         #$blcPag = TRUE; // Bloquear paginacao
         break;
 }
@@ -231,7 +230,8 @@ switch ($pag) {
     if ($mobile) {
         include './pagina/estoque/includes/m-estoque-lista.inc.php';
     } else {
-        include './pagina/estoque/includes/estoque-lista.inc.php';
+        # include './pagina/estoque/includes/estoque-lista.inc.php';
+        include './pagina/estoque/includes/estoque-lista-ec.inc.php';
     }
 
     if ($outroEstoque) {
