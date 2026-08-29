@@ -107,6 +107,9 @@ switch ($pag) {
     case 'listingr':
         $complemento = "";
         break;
+    case 'listprim':
+        $complemento=" AND cad.cod IN(1, 2, 3) ORDER BY cod DESC ";
+        break;
     default :
         $complemento = " AND situacao = 'ativo' ";
         break;
