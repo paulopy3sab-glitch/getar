@@ -1,7 +1,7 @@
 <?php
 /*
  * @autor: Paulo Regis 
- * @date: 24/09;2021
+ * @date: 24/09/2021
  * @object: Auxiliar a listagem e aliviar o pesso do código fonte de
  * estoque.php
  */
@@ -18,7 +18,6 @@ $pagina = 1;
   $resultado = retornoSQL($consulta);
   }
  */
-  $outroEstoque = TRUE; 
 
 $resultado = retornoSQL($consulta);
 $msgList = "Listagem Geral.";
@@ -39,7 +38,6 @@ $msgList = "Listagem Geral.";
         <?php
         $conta = 0;
         while ($dados = arraySQL($resultado)) {
-            $outroEstoque = FALSE;
             $style = "";
             if ($dados["situacao"] == "inativo") {
                 $style = " style=\"text-decoration:line-through;\"";

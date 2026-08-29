@@ -2,159 +2,10 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="292">
         <file>
-            <url>pagina/cadastros/funcoes_cadcons.php</url>
-            <bookmark id="288">
-                <name/>
-                <line>69</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>pagina/oscontrol/classe_os.php</url>
-            <bookmark id="278">
-                <name/>
-                <line>609</line>
-                <key/>
-            </bookmark>
-            <bookmark id="285">
-                <name/>
-                <line>661</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>pagina/proj_eletro/funcoes_projeto.php</url>
-            <bookmark id="62">
-                <name/>
-                <line>161</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>pagina/estoque/pedido.php</url>
-            <bookmark id="289">
-                <name/>
-                <line>18</line>
-                <key/>
-            </bookmark>
-            <bookmark id="290">
-                <name/>
-                <line>71</line>
-                <key/>
-            </bookmark>
-            <bookmark id="267">
-                <name/>
-                <line>188</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>pagina/mensagens/includes/switch.inc.php</url>
-            <bookmark id="272">
-                <name/>
-                <line>28</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>arquivos/consultas_financas.sql</url>
-            <bookmark id="238">
-                <name/>
-                <line>319</line>
-                <key/>
-            </bookmark>
-            <bookmark id="255">
-                <name/>
-                <line>555</line>
-                <key/>
-            </bookmark>
-            <bookmark id="256">
-                <name/>
-                <line>584</line>
-                <key/>
-            </bookmark>
-            <bookmark id="143">
-                <name/>
-                <line>771</line>
-                <key/>
-            </bookmark>
-            <bookmark id="134">
-                <name/>
-                <line>882</line>
-                <key/>
-            </bookmark>
-            <bookmark id="147">
-                <name/>
-                <line>921</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
             <url>pagina/estoque/switch.inc.php</url>
             <bookmark id="180">
                 <name/>
                 <line>82</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>pagina/projetos/trait_projcons.php</url>
-            <bookmark id="171">
-                <name/>
-                <line>25</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>arquivos/consultas_cadastro.sql</url>
-            <bookmark id="228">
-                <name/>
-                <line>45</line>
-                <key/>
-            </bookmark>
-            <bookmark id="258">
-                <name/>
-                <line>229</line>
-                <key/>
-            </bookmark>
-            <bookmark id="84">
-                <name/>
-                <line>265</line>
-                <key/>
-            </bookmark>
-            <bookmark id="114">
-                <name/>
-                <line>330</line>
-                <key/>
-            </bookmark>
-            <bookmark id="115">
-                <name/>
-                <line>359</line>
-                <key/>
-            </bookmark>
-            <bookmark id="259">
-                <name/>
-                <line>380</line>
-                <key/>
-            </bookmark>
-            <bookmark id="113">
-                <name/>
-                <line>397</line>
-                <key/>
-            </bookmark>
-            <bookmark id="235">
-                <name/>
-                <line>472</line>
-                <key/>
-            </bookmark>
-            <bookmark id="227">
-                <name/>
-                <line>498</line>
-                <key/>
-            </bookmark>
-            <bookmark id="292">
-                <name/>
-                <line>698</line>
                 <key/>
             </bookmark>
         </file>
@@ -216,22 +67,6 @@
             </bookmark>
         </file>
         <file>
-            <url>pagina/cadastros/classe_cad.php</url>
-            <bookmark id="108">
-                <name/>
-                <line>0</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>pagina/oscontrol/ordem_relato.inc.php</url>
-            <bookmark id="231">
-                <name/>
-                <line>69</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
             <url>pagina/estoque/estoque-cad.inc.php</url>
             <bookmark id="186">
                 <name/>
@@ -281,35 +116,6 @@
             </bookmark>
         </file>
         <file>
-            <url>pagina/artigos/classe_artigos.php</url>
-            <bookmark id="254">
-                <name/>
-                <line>332</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>arquivos/inicio_financas.sql</url>
-            <bookmark id="87">
-                <name/>
-                <line>37</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>arquivos/consultas_artigos.sql</url>
-            <bookmark id="252">
-                <name/>
-                <line>109</line>
-                <key/>
-            </bookmark>
-            <bookmark id="253">
-                <name/>
-                <line>125</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
             <url>funcoes/classe_conex.php</url>
             <bookmark id="78">
                 <name/>
@@ -348,14 +154,6 @@
             <bookmark id="183">
                 <name/>
                 <line>159</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>pagina/opera/classe_opera.php</url>
-            <bookmark id="196">
-                <name/>
-                <line>630</line>
                 <key/>
             </bookmark>
         </file>
@@ -437,40 +235,6 @@
             <bookmark id="236">
                 <name/>
                 <line>808</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>arquivos/consultas_projetos.sql</url>
-            <bookmark id="140">
-                <name/>
-                <line>232</line>
-                <key/>
-            </bookmark>
-            <bookmark id="176">
-                <name/>
-                <line>311</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>pagina/estoque/classe_estoque.php</url>
-            <bookmark id="25">
-                <name/>
-                <line>1053</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>pagina/financas/contacor.php</url>
-            <bookmark id="210">
-                <name/>
-                <line>97</line>
-                <key/>
-            </bookmark>
-            <bookmark id="224">
-                <name/>
-                <line>148</line>
                 <key/>
             </bookmark>
         </file>
@@ -569,6 +333,260 @@
             </bookmark>
         </file>
         <file>
+            <url>arquivos/consultas_proj_eletro.sql</url>
+            <bookmark id="128">
+                <name/>
+                <line>32</line>
+                <key/>
+            </bookmark>
+            <bookmark id="126">
+                <name/>
+                <line>93</line>
+                <key/>
+            </bookmark>
+            <bookmark id="127">
+                <name/>
+                <line>217</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>pagina/cadastros/funcoes_cadcons.php</url>
+            <bookmark id="288">
+                <name/>
+                <line>69</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>pagina/oscontrol/classe_os.php</url>
+            <bookmark id="278">
+                <name/>
+                <line>609</line>
+                <key/>
+            </bookmark>
+            <bookmark id="285">
+                <name/>
+                <line>661</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>pagina/proj_eletro/funcoes_projeto.php</url>
+            <bookmark id="62">
+                <name/>
+                <line>161</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>pagina/estoque/pedido.php</url>
+            <bookmark id="289">
+                <name/>
+                <line>18</line>
+                <key/>
+            </bookmark>
+            <bookmark id="290">
+                <name/>
+                <line>71</line>
+                <key/>
+            </bookmark>
+            <bookmark id="267">
+                <name/>
+                <line>188</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>pagina/mensagens/includes/switch.inc.php</url>
+            <bookmark id="272">
+                <name/>
+                <line>28</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>arquivos/consultas_financas.sql</url>
+            <bookmark id="238">
+                <name/>
+                <line>319</line>
+                <key/>
+            </bookmark>
+            <bookmark id="255">
+                <name/>
+                <line>555</line>
+                <key/>
+            </bookmark>
+            <bookmark id="256">
+                <name/>
+                <line>584</line>
+                <key/>
+            </bookmark>
+            <bookmark id="143">
+                <name/>
+                <line>771</line>
+                <key/>
+            </bookmark>
+            <bookmark id="134">
+                <name/>
+                <line>882</line>
+                <key/>
+            </bookmark>
+            <bookmark id="147">
+                <name/>
+                <line>921</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>pagina/projetos/trait_projcons.php</url>
+            <bookmark id="171">
+                <name/>
+                <line>25</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>arquivos/consultas_cadastro.sql</url>
+            <bookmark id="228">
+                <name/>
+                <line>45</line>
+                <key/>
+            </bookmark>
+            <bookmark id="258">
+                <name/>
+                <line>229</line>
+                <key/>
+            </bookmark>
+            <bookmark id="84">
+                <name/>
+                <line>265</line>
+                <key/>
+            </bookmark>
+            <bookmark id="114">
+                <name/>
+                <line>330</line>
+                <key/>
+            </bookmark>
+            <bookmark id="115">
+                <name/>
+                <line>359</line>
+                <key/>
+            </bookmark>
+            <bookmark id="259">
+                <name/>
+                <line>380</line>
+                <key/>
+            </bookmark>
+            <bookmark id="113">
+                <name/>
+                <line>397</line>
+                <key/>
+            </bookmark>
+            <bookmark id="235">
+                <name/>
+                <line>472</line>
+                <key/>
+            </bookmark>
+            <bookmark id="227">
+                <name/>
+                <line>498</line>
+                <key/>
+            </bookmark>
+            <bookmark id="292">
+                <name/>
+                <line>698</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>pagina/cadastros/classe_cad.php</url>
+            <bookmark id="108">
+                <name/>
+                <line>0</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>pagina/oscontrol/ordem_relato.inc.php</url>
+            <bookmark id="231">
+                <name/>
+                <line>69</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>pagina/artigos/classe_artigos.php</url>
+            <bookmark id="254">
+                <name/>
+                <line>332</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>arquivos/inicio_financas.sql</url>
+            <bookmark id="87">
+                <name/>
+                <line>37</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>arquivos/consultas_artigos.sql</url>
+            <bookmark id="252">
+                <name/>
+                <line>109</line>
+                <key/>
+            </bookmark>
+            <bookmark id="253">
+                <name/>
+                <line>125</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>pagina/opera/classe_opera.php</url>
+            <bookmark id="196">
+                <name/>
+                <line>630</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>arquivos/consultas_projetos.sql</url>
+            <bookmark id="140">
+                <name/>
+                <line>232</line>
+                <key/>
+            </bookmark>
+            <bookmark id="176">
+                <name/>
+                <line>311</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>pagina/estoque/classe_estoque.php</url>
+            <bookmark id="25">
+                <name/>
+                <line>1053</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>pagina/financas/contacor.php</url>
+            <bookmark id="210">
+                <name/>
+                <line>97</line>
+                <key/>
+            </bookmark>
+            <bookmark id="224">
+                <name/>
+                <line>148</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
             <url>pagina/oscontrol/ordem.php</url>
             <bookmark id="206">
                 <name/>
@@ -626,24 +644,6 @@
             <bookmark id="286">
                 <name/>
                 <line>815</line>
-                <key/>
-            </bookmark>
-        </file>
-        <file>
-            <url>arquivos/consultas_proj_eletro.sql</url>
-            <bookmark id="128">
-                <name/>
-                <line>32</line>
-                <key/>
-            </bookmark>
-            <bookmark id="126">
-                <name/>
-                <line>93</line>
-                <key/>
-            </bookmark>
-            <bookmark id="127">
-                <name/>
-                <line>217</line>
                 <key/>
             </bookmark>
         </file>
