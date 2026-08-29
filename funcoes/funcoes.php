@@ -1,7 +1,23 @@
 <?php
+
 /**
  * funcoes especificas para O GETAR
  */
+function logon_sis($nick, $senha) {
+    $consulta = "SELECT hashsl,
+                        nick,
+                        codcad
+                   FROM getarsab.getar_control
+                  WHERE nick  ='" . $nick . "'";
+    $dados = consultaSQL($consulta);
+    
+    if (password_verify($senha, $dados['hashsl'])) {
+        $msg = "<b style=\"color: red;\">Bem Vindo ".$dados['hashsl']."!!!</b>";
+        return $msg;
+    }
+    $msg = "<b style=\"color: red;\">Usu&aacute;rio n&atilde;o Autorizado.</b><br>";
+    return $msg;
+}
 
 /**
  * Retorna a descricao resumida e completa de uma classificacao de um cliente
@@ -50,19 +66,19 @@ function descricaoClassificacao($clasf, $msg = "") {
  * @return <string> $msg
  * @global <type> $conexao
  */
-function verificaMensagens($resp){
+function verificaMensagens($resp) {
     $msg = "";
     $consulta = "SELECT COUNT(*) num
                    FROM getar_mens
-                  WHERE dest = '".$resp."'
+                  WHERE dest = '" . $resp . "'
                         AND situacao = 'ativo'
                         AND lida= '0'";
-    $dados= consultaSQL($consulta);
-    $numMens= $dados['num'];
-    
+    $dados = consultaSQL($consulta);
+    $numMens = $dados['num'];
+
     if ($numMens > 0) {
-        $msg= " - <a href=\"index.php?st=mensagens&pag=list&tipo=recb\">
-            ".$dados['num']." mensagens novas</a>";
+        $msg = " - <a href=\"index.php?st=mensagens&pag=list&tipo=recb\">
+            " . $dados['num'] . " mensagens novas</a>";
     }
     return $msg;
 }
@@ -72,18 +88,19 @@ function verificaMensagens($resp){
  * e mensagens de erro SQL
  * @return string
  */
-function verificaContatos(){
-    $msg = "";    
+function verificaContatos() {
+    $msg = "";
     //se for administrador
     $consulta = "SELECT COUNT(*) num
                    FROM getar_mens
                   WHERE dest = 'all_admin'
                         AND situacao = 'ativo'
                         AND lida= '0'";
-    $dados= consultaSQL($consulta);
-    $numMens= $dados['num']; if ($numMens > 0) {
-        $msg= " - <a href=\"index.php?st=mensagens&pag=contatos\">
-            ".$dados['num']." Msg. all_admin novas</a>";
+    $dados = consultaSQL($consulta);
+    $numMens = $dados['num'];
+    if ($numMens > 0) {
+        $msg = " - <a href=\"index.php?st=mensagens&pag=contatos\">
+            " . $dados['num'] . " Msg. all_admin novas</a>";
     }
     return $msg;
 }
@@ -93,17 +110,17 @@ function verificaContatos(){
  * @return <string> $msg
  * @global <type> $conexao
  */
-function verificaLembretes($resp){
+function verificaLembretes($resp) {
 
     $consulta = "SELECT COUNT(*) num
                    FROM getar_lembre
                   WHERE dataAgendada <= CURDATE()
-                        AND dest = '".$resp."'
+                        AND dest = '" . $resp . "'
                         AND situacao= 'ativo'";
     $dados = consultaSQL($consulta);
-    $msg= "";
+    $msg = "";
     if ($dados['num'] > 0) {
-        $msg= " - <a href=\"index.php?st=lembretes&ft=lmb&pag=list&tipo=recb\">".$dados['num']." lembretes para hoje </a>";
+        $msg = " - <a href=\"index.php?st=lembretes&ft=lmb&pag=list&tipo=recb\">" . $dados['num'] . " lembretes para hoje </a>";
     }
     return $msg;
 }
@@ -114,14 +131,14 @@ function verificaLembretes($resp){
  * @param type $codAtrib
  * @return boolean
  */
-function atrib($codAtrib){
+function atrib($codAtrib) {
     global $arrayAtribEst;
-    
+
     $atrib = FALSE;
     if (in_array($codAtrib, $arrayAtribEst)) {
         $atrib = TRUE;
     }
-    
+
     return $atrib;
 }
 
