@@ -12,8 +12,8 @@ $estPadr = "Santa Catarina";
 // para as funcoes ainda trabalhando no modo extruturado
 global $conexao;
 //Conexao local
-$conexao = mysqli_connect("localhost", "root", "sardo312", "getarteste");
-# $conexao = mysqli_connect("localhost", "dbgetar", "m@te1128", "getarteste");
+# $conexao = mysqli_connect("localhost", "root", "per&ga:mo", "getarteste");
+$conexao = mysqli_connect("localhost", "dbgetar", "m@te1128", "getarteste");
 mysqli_set_charset($conexao, "utf8");
 global $bdRaiz;
 $bdRaiz = "";
@@ -28,6 +28,9 @@ $nomeest= "Eletronica";
 # parametro: definir se cadastra um produto esgotado num pedido
 global $prodEsgotado;
 $prodEsgotado= FALSE;
+
+global $outroEstoque;
+$outroEstoque = TRUE;
 
 /**
  * Configuracao de cliente
