@@ -40,7 +40,6 @@ $consulta = "SELECT estq.cod,
                     FORMAT(estq.valorvenda, 2, 'de_DE') strValorVenda,
                     estq.moeda,
                     estq.peso,
-                    estq.foto,
                     estq.local,
                     qd.etq quadra,
                     rua.etq rua,
@@ -131,20 +130,6 @@ if ($dados['cod'] <> $codestq) {
                     <label>Descr. T&eacute;nica:</label>
                     <input name='descrtec' type='text' size='42' maxlength='120' value='<?php echo $dados['descrtec']; ?>'  onkeydown="atualDivDescrTec(this.value);" onclick="blqForn()"><br>                    
                     <label>Estoque:</label>
-                    <!--<select name="numest" onclick="blqForn()">
-                    <?php
-                    /* $consulta = "SELECT cod, nome FROM estnum WHERE situacao = 'ativo' ORDER BY descr";
-                      $resultado = retornoSQL($consulta);
-                      while ($dadosSelect = arraySQL($resultado)) {
-                      if ($dados['numest'] == $dadosSelect['cod']) {
-                      $selected = "selected";
-                      } else {
-                      $selected = "";
-                      }
-                      echo '<option value="' . $dadosSelect['cod'] . '"' . $selected . '>' . $dadosSelect['nome'] . '</option>';
-                      } */
-                    ?>
-                    </select><br />-->
                     <input name="numest" type="hidden" value="<?php echo $dados['numest']; ?>">
                     <b style="background-color: white"><?php echo $nomeest; ?></b><br>
                     <label>Nosso Num.:</label>
