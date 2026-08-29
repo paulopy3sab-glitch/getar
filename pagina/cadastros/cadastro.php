@@ -36,8 +36,7 @@ if (isset($_POST["salvarCad"])) {
     $cad->set_complemento($_POST['complemento']);
     $cad->set_bairro($_POST['bairro']);
     $cad->set_cidade($_POST['cidade']);
-    $cad->set_pais($_POST['pais']);
-    $cad->set_estado($_POST['estado']);
+    $cad->set_codEst($_POST['codest']);
     $cad->set_cep($_POST['cep']);
     $cad->set_clasf($_POST['clasf']);
     $cad->set_situCad($_POST['situacao']);
