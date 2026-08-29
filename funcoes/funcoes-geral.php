@@ -772,8 +772,8 @@ function clienteSalvRap($nome, $endr, $num, $bai, $cep = "", $cidade = "", $est 
     if ($est == "") {
         $est = $estPadr;
     }
-    $consulta = "INSERT INTO getar_cad (nome, clasf, desde, endr, numero, bairro, cep, cidade, estado, situacao)
-                                VALUES('" . $nome . "', 'c', CURDATE(), '" . $endr . "', '" . $num . "', '" . $bai . "', '" . $cep . "', '" . $cidade . "', '" . $est . "', 'ativo')";
+    $consulta = "INSERT INTO getar_cad (nome, clasf, desde, endr, numero, bairro, cep, cidade, getar_estado_cod, situacao)
+                                VALUES('" . $nome . "', 'c', CURDATE(), '" . $endr . "', '" . $num . "', '" . $bai . "', '" . $cep . "', '" . $cidade . "', " . $est . ", 'ativo')";
     $codCad = executaIdSQL($consulta);
 
     return $codCad;
