@@ -28,7 +28,22 @@ $dirPChave = "./config/"; // reconfigurado em conex.inc.php
  */
 if (!isset($_SESSION['resp'])) {
     $_SESSION['resp'] = "visitante";
+    $_SESSION['proprietario'] = "getar";
     $_SESSION['datalog'] = date("d/m/Y");
+
+    if (isset($_POST['senha'])) {
+        //Conexao geral
+        $conexao = mysqli_connect("localhost", "dbgetar", "m@te1128", "getarsab");
+        mysqli_set_charset($conexao, "utf8");
+        $consulta = "SELECT proprietario
+                       FROM getarsab.getar_control
+                      WHERE nick  ='" . $_POST['user'] . "'";
+        $resultado = mysqli_query($conexao, $consulta);
+        $dados = mysqli_fetch_array($resultado);
+        # echo "<pre>".$consulta."</pre>";
+        $_SESSION['proprietario'] = $dados['proprietario'];
+        mysqli_close($conexao);
+    }
 }
 $resp = $_SESSION['resp'];
 $datalog = $_SESSION['datalog'];
@@ -40,25 +55,41 @@ if (!isset($_GET['pag'])) {
     $_GET['pag'] = "";
 }
 
-// arquvos de configuracao
-include './config/conex.inc.php';
 // apenas para continar trabalhando no modo extruturado
 include $dirChave . 'funcoes.php';
 include $dirChave . 'funcoes-geral.php';
 include $dirChave . 'funcoes-conex.php';
+// arquivos chave
+include $dirChave . 'trait_geral.php';
 
 // trabalhando em POO
 // arquvos de configuracao
-include './config/trait_personal.php';
-include './config/classe_config.php';
-// arquivos chave
-include $dirChave . 'trait_geral.php';
-include $dirChave . 'classe_conex.php';
-//include $dirChave . 'classe_cad.php';
+# include './config/trait_personal.php';
+# include './config/classe_config.php';
+// arquvos de configuracao
+$prop = $_SESSION['proprietario'];
+switch ($prop) {
+    case "sab":
+        include './config/conex-sab.inc.php';
+        include './config/trait_personal-sab.php';
+        include './config/classe_config-sab.php';
+        break;
+    case "distri":
+        include './config/conex-dst.inc.php';
+        include './config/trait_personal-dst.php';
+        include './config/classe_config-dst.php';
+        break;
+    default :
+        include './config/conex.inc.php';
+        include './config/trait_personal.php';
+        include './config/classe_config.php';
+}
+include './funcoes/classe_conex.php';
 include './pagina/cadastros/classe_cad.php';
 include './pagina/cadastros/funcoes_cadcons.php';
+
 // arquivo de configuracao personalizado
-include $dirPChave . 'classe_pcad.php';
+include './config/classe_pcad.php'; # não entendi por que personalizado???
 
 $cad = new Pcadastro();
 $msg = "";
@@ -189,7 +220,7 @@ if (isset($_POST['user'])) {
                     break;
                 case 'cadastro':
                     ?>
-                    <script type="" language="javascript" src="<?php echo $dirChave; ?>funcoes_cadastro.js"></script>
+                    <script type="" language="javascript" src="pagina/cadastros/funcoes_cadastro.js"></script>
                     <?php
                     break;
             }
@@ -211,15 +242,15 @@ if (isset($_POST['user'])) {
                 <?php
                 //Verificar se logado
                 if (!$cad->user_validacao()) {
-                    echo "</div>"; // fecha o cabecalho
                     ?>
+                    <div id="cablinks">
+                        <span>Servidor: <?php echo $cad->get_servLc(); ?></span> -&nbsp;
+                        <span>GETAR Vers&atilde;o: 4.0.0</span> -&nbsp;
+                    </div>
+                <?php
+                echo "</div>"; // fecha o cabecalho
+                ?>
                     <div class="logon">
-                        <div>
-                            <h1 style="color: brown; text-align: center; font-family: cursive">
-                                Servidor<br />
-                                <?php echo $cad->get_servLc(); ?>
-                            </h1>
-                        </div>
                         <div id="logoQd">                    
                             <?php echo $cad->logoPrin(); ?>
                         </div>
@@ -253,6 +284,7 @@ if (isset($_POST['user'])) {
                     $arrayAtribEst = $cad->arrayAtrib;
                     ?>
                     <div id="cablinks">
+                        <span>Servidor: <?php echo $cad->get_servLc(); ?></span> -&nbsp;
                         <span>GETAR Vers&atilde;o: 4.0.0</span> -&nbsp;
                         <span><?php echo $resp; ?></span>
                         <?php
@@ -323,11 +355,6 @@ if (isset($_POST['user'])) {
                     if ($cad->atrib("72")) {
                         ?>
                         <li><a href="index.php?st=mensagens&ft=mens&pag=list">Mensagens</a></li>
-                        <?php
-                    }
-                    if ($cad->atrib("111")) {
-                        ?>
-                        <li><a href="index.php?st=veiculo&ft=mens&pag=list">Veiculos</a></li>
                         <?php
                     }
                     if ($cad->atrib("31") or $cad->atrib("41")) {
@@ -503,8 +530,13 @@ if (isset($_POST['user'])) {
                 include './config/switch.inc.php';
                 switch ($setor) {
                     case "boasvindas":
-                        //Boas Vindas Personalizada
-                        include './config/boasvindas.inc.php';
+                        if ($cad->get_LBVindas()) {
+                            //Boas Vindas Personalizada
+                            #include './config/boasvindas.inc.php'; #difetente no ambiente testes???
+                            include './pagina/boasvindas/boasvindas.inc.php';
+                        } else {
+                            echo $boasVnd->textoBoaVindas();
+                        }
                         echo "<hr>";
                         break;
                     case "cadastro":
@@ -549,7 +581,7 @@ if (isset($_POST['user'])) {
                         include("pagina/backup.php");
                         break;
                     case "ajuda":
-                        echo $boasVnd->textoBoaVindas();                        
+                        echo $boasVnd->textoBoaVindas();
                         break;
                     case "phpInfo":
                         phpinfo();
@@ -574,5 +606,5 @@ if (isset($_POST['user'])) {
 <!– SHADOWBOX –>
 <link rel="stylesheet" href="css/shadowbox.css">
 <script type="text/javascript" src="js/shadowbox.js"></script>
-<script type="text/javascript"> Shadowbox.init(); </script>
+<script type="text/javascript"> Shadowbox.init();</script>
 <!– SHADOWBOX –>
